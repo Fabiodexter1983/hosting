@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Sistema de Kiosco - Inicio de Sesión</title>
+  <script>
+     // Función para validar el inicio de sesión
+    function iniciarSesion() {
+      // Obtener los valores ingresados en los campos de usuario y contraseña
+      var usuario = document.getElementById("usuario").value;
+      var contraseña = document.getElementById("contraseña").value;
+
+      // Validar los campos
+      if (usuario === "" || contraseña === "") {
+        alert("Por favor, no deje los campos vacios.");
+        return;
+      }
+
+     
+     if (usuario === "admin" && contraseña === "1234") {
+        // Redirigir al usuario a la página principal o dashboard
+        window.location.href = "pantalla-secundaria.html";
+         } else {
+       if (usuario === "cajero" && contraseña === "cajero") {
+        // Redirigir al usuario a la página principal o dashboard
+        window.location.href = "pantalla-secundaria.html";
+         } else {
+
+      if (usuario === "admin" && contraseña === "admin") {
+        // Redirigir al usuario a la página principal o dashboard
+        window.location.href = "pantalla-secundaria.html";
+      } else {
+        alert("Usuario o contraseña incorrectos. Por favor, intente nuevamente.");
+      }
+    }
+    }
+	}
+  </script>
+  <script>
+  function soloLetras(e) {
+      key = e.keyCode || e.which;
+      tecla = String.fromCharCode(key).toLowerCase();
+      letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+      especiales = [8, 37, 39, 46];
+  
+      tecla_especial = false
+      for(var i in especiales) {
+          if(key == especiales[i]) {
+              tecla_especial = true;
+              break;
+          }
+      }
+  
+      if(letras.indexOf(tecla) == -1 && !tecla_especial)
+          return false;
+  }
+  
+  function limpia() {
+      var val = document.getElementById("miInput").value;
+      var tam = val.length;
+      for(i = 0; i < tam; i++) {
+          if(!isNaN(val[i]))
+              document.getElementById("miInput").value = '';
+      }
+  }
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+    
+    h1 {
+      color: #333;
+    }
+    
+    .login-container {
+      margin: 100px auto;
+      width: 300px;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: black;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    
+    .login-container button:hover {
+      background-color: #f54b54;
+    }
+	
+  </style>
+</head>
+<body>
+  <div class="login-container">
+   <img width="320" height="150" align="top"  src="imagen.jpg">
+	<h4>Iniciar sesion<h4><br>
+    <form>
+	
+    <input type="text" id="usuario" placeholder="Usuario" name="usuario" maxlength="15" onkeypress="return soloLetras(event)" onblur="limpia()" id="miInput"><br><br>
+
+     <input type="password" placeholder="Contraseña" id="contraseña" name="contraseña"><br><br>
+
+    <button type="button" onclick="iniciarSesion()">Iniciar Sesión</button><br><br>
+	<p  style="color: black; font-size: 12px;">En caso de olvidar la contraseña ponerse en contacto con el administrador del sistema.</p>
+	<p style="color: #f54b54; font-size: 12px;"> Direccion de contacto: admin@superkiosko.com</p>
+    </form>
+  </div>
+</body>
+</html>

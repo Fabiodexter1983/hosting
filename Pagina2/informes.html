@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sistema de Kiosco - Modulo de Informes</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Encabezado */
+    header {
+      background-color: #f0f0f0;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+    
+    /* Contenedor principal */
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Navegación */
+    nav {
+      background-color: black;
+      padding: 12px;
+	  
+
+    }
+    
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    nav ul li {
+      display: inline-block;
+     
+    }
+    
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+    }
+    
+    /* Contenido principal */
+    .content {
+      margin-top: 20px;
+    }
+    
+    /* Informes */
+    .reports-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    .report-card {
+      width: 300px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    .report-card h3 {
+      margin-top: 0;
+    }
+    
+    .report-card p {
+      margin-bottom: 10px;
+    }
+    
+    .report-card button {
+      padding: 10px;
+      background-color: #4CAF50;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    
+    .report-card button:hover {
+      background-color: #45a049;
+    }
+	/* Pie de página */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+	.cerrar{
+
+padding-left: 425px;
+}
+
+.botonera a:hover{
+color: white;
+background: #f54b54;
+filter: alpha (opacity=80);
+}
+
+.fcc-btn {
+  background-color: black;
+  color: white;
+  padding: 10px 90px;
+  text-decoration: none;
+}
+.fcc-btn:hover {
+  background-color: #f54b54;
+}
+.logo{
+
+padding-left: 12px;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <img width="300" height="140" align="top"  src="imagen.jpg">
+  </header>
+
+  <div class="container">
+    <nav class="botonera">
+      <ul>
+        <li><a href="pantalla-secundaria.html">Inicio</a></li>
+        <li><a href="ventas.html">Ventas</a></li>
+        <li><a href="inventario.html">Inventario/Productos</a></li>
+        <li><a href="informes.html">Informes</a></li>
+		<li><a href="configuracion.html">Configuracion</a></li>
+		<li class="cerrar"><a href="Sesioncerrada.html">Cerrar sesion</a></li>
+		<li style="color: white" class="logo" class="logo"><img width="35" height="25" align="center"  src="login-usuario.png"><a href="cambiar-contrasena.html">Admin</a></li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <h2 style="color: #f54b54; text-align: center">Modulo de Informes</h2><br>
+
+      <div class="reports-container">
+        <div class="report-card">
+          <h3  style="color: #f54b54; text-align: center">Ventas diarias</h3>
+          <p>Información sobre las ventas realizadas cada día.</p></br>
+          <a href="ventas-diarias.pdf"  target="blank"  download="ventas.diarias" class="fcc-btn">Generar Informe</a><br>
+        </div>
+        <div class="report-card">
+          <h3 style="color: #f54b54; text-align: center">Productos populares</h3>
+          <p>Información sobre los productos más vendidos.</p><br>
+          <a href="Productos-vendidos.pdf" target="blank" class="fcc-btn" download="Productos-vendidos">Generar Informe</a><br>
+        </div>
+        <div class="report-card">
+          <h3 style="color: #f54b54; text-align: center">Ingresos por cliente</h3>
+          <p>Información sobre los ingresos generados por cada cliente.</p><br>
+          <a href="#" class="fcc-btn">Generar Informe</a><br>
+        </div>
+        <!-- Agregar más tarjetas de informes según sea necesario -->
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>
+

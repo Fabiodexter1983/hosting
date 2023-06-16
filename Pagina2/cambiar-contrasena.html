@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Sistema de Kiosco - Modulo de Ventas</title>
+  
+
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Encabezado */
+    header {
+      background-color: #f0f0f0;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+    
+    /* Contenedor principal */
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Navegación */
+    nav {
+      background-color: black;
+      padding: 12px;
+    }
+    
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    nav ul li {
+      display: inline-block;
+     
+    }
+    
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+    }
+    
+    /* Contenido principal */
+    .content {
+      margin-top: 20px;
+    }
+    
+    /* Formulario de ventas */
+    .sales-form {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    .sales-form label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    .sales-form input[type="text"],
+    .sales-form input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+    }
+    
+    .sales-form button {
+      padding: 10px;
+      background-color:  black;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    
+    .sales-form button:hover {
+      background-color: #f54b54;
+    }
+	/* Pie de página */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+	.cerrar{
+
+padding-left: 440px;
+}
+.botonera a:hover{
+color: white;
+background: #f54b54;
+filter: alpha (opacity=80);
+}
+#clock {
+    font-size: 20px;
+	color: #f54b54;
+        }
+		#message {
+    font-size: 20px;
+	color: #f54b54;
+        }
+		
+		.fcc-btn {
+  background-color: black;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+}
+.fcc-btn:hover {
+  background-color: #f54b54;
+}
+.logo{
+
+padding-left: 12px;
+}
+  /* Tabla de inventario */
+    .inventory-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .inventory-table th,
+    .inventory-table td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    
+    .inventory-table th {
+      background-color: #f2f2f2;
+    }
+    
+    .inventory-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <img width="300" height="140" align="top"  src="imagen.jpg">
+  </header>
+
+  <div class="container">
+    <nav class="botonera">
+      <ul>
+        <li><a href="pantalla-secundaria.html">Inicio</a></li>
+        <li><a href="ventas.html">Ventas</a></li>
+        <li><a href="inventario.html">Inventario/Productos</a></li>
+        <li><a href="#">Informes</a></li>
+		<li><a href="#">Configuracion</a></li>
+		<li class="cerrar"><a href="Sesioncerrada.html">Cerrar sesion</a></li>
+		<li style="color: white" class="logo"><img width="35" height="25" align="center"  src="login-usuario.png"><span style="color: black"></span>Cajero</li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <h2 style="color: #f54b54; text-align: center">Cambiar Contraseña</h2><br>
+
+      <div class="sales-form">
+        <form id="myForm">
+		<label for="product" style="color: #f54b54" >Contraseña Anterior</label>
+          <input type="password" style="width : 200px; heigth : 5px" id="product"  ><br><br>
+		  
+		 <label for="product" style="color: #f54b54">Nueva Contraseña</label>
+          <input type="password" style="width : 200px; heigth : 5px" id="product" ><br><br>
+		  
+          <label for="product" style="color: #f54b54">Repetir Contraseña</label>
+          <input type="password"  id="producto" oninput="calculateTotal()" style="width : 200px; heigth : 5px" id="product" ><br><br></br><br>
+
+          	 
+		          		 
+
+         <a href="cambiar-contrasena-exito.html" class="fcc-btn">Aceptar</a><br><br>
+		 
+		 		 
+        </form>
+			
+		
+      </div><br><br>
+	 
+</div>
+	  
+    </div>
+  </div>
+
+ 
+</body>
+</html>
+

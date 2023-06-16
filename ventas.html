@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sistema de Kiosco - Modulo de Ventas</title>
+  <script>
+  // Reloj
+  
+function updateClock() {
+    var currentTime = new Date();
+    var hours = currentTime.getHours();
+    var minutes = currentTime.getMinutes();
+    var seconds = currentTime.getSeconds();
+
+    // Añade un cero inicial a los minutos y segundos si son menores a 10
+    minutes = (minutes < 10 ? "0" : "") + minutes;
+    seconds = (seconds < 10 ? "0" : "") + seconds;
+
+    var timeString = hours + ":" + minutes + ":" + seconds;
+    document.getElementById("clock").innerHTML = timeString;
+}
+
+// Actualiza el reloj cada segundo
+setInterval(updateClock, 1000);
+
+</script>
+
+
+<script>
+// Rellenar total
+
+function calculateTotal() {
+    var productoInput = document.getElementById("producto");
+    var totalInput = document.getElementById("total");
+
+    var producto = productoInput.value;
+    var textoTotal = "";
+
+    if (producto) {
+        textoTotal = "300$";
+    }
+
+    totalInput.value = textoTotal;
+}
+</script>
+
+
+
+<script>
+// Rellenar total
+
+function calculateTota() {
+    var productoInput = document.getElementById("produ");
+    var totalInput = document.getElementById("tot");
+
+    var producto = productoInput.value;
+    var textoTotal = "";
+
+    if (producto) {
+        textoTotal = "Coca Cola 500 ml";
+    }
+
+    totalInput.value = textoTotal;
+}
+</script>
+
+
+
+
+
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Encabezado */
+    header {
+      background-color: #f0f0f0;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+    
+    /* Contenedor principal */
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Navegación */
+    nav {
+      background-color: black;
+      padding: 12px;
+    }
+    
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    nav ul li {
+      display: inline-block;
+     
+    }
+    
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+    }
+    
+    /* Contenido principal */
+    .content {
+      margin-top: 20px;
+    }
+    
+    /* Formulario de ventas */
+    .sales-form {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    .sales-form label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    .sales-form input[type="text"],
+    .sales-form input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+    }
+    
+    .sales-form button {
+      padding: 10px;
+      background-color:  black;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    
+    .sales-form button:hover {
+      background-color: #f54b54;
+    }
+	/* Pie de página */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+	.cerrar{
+
+padding-left: 425px;
+}
+.botonera a:hover{
+color: white;
+background: #f54b54;
+filter: alpha (opacity=80);
+}
+#clock {
+    font-size: 20px;
+	color: #f54b54;
+        }
+		#message {
+    font-size: 20px;
+	color: #f54b54;
+        }
+		
+		.fcc-btn {
+  background-color: black;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+}
+.fcc-btn:hover {
+  background-color: #f54b54;
+}
+.logo{
+
+padding-left: 12px;
+}
+  </style>
+</head>
+<body>
+  <header>
+  <img width="300" height="140" align="top"  src="imagen.jpg">
+  </header>
+
+  <div class="container">
+    <nav class="botonera">
+      <ul>
+        <li><a href="pantalla-secundaria.html">Inicio</a></li>
+        <li><a href="ventas.html">Ventas</a></li>
+        <li><a href="inventario.html">Inventario/Productos</a></li>
+        <li><a href="informes.html">Informes</a></li>
+		<li><a href="configuracion.html">Configuracion</a></li>
+		<li class="cerrar"><a href="Sesioncerrada.html">Cerrar sesion</a></li>
+		<li style="color: white" class="logo" class="logo"><img width="35" height="25" align="center"  src="login-usuario.png"><a href="cambiar-contrasena.html">Admin</a></li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <h2 style="color: #f54b54; text-align: center">Modulo de Ventas</h2><br>
+
+      <div class="sales-form">
+        <form id="myForm">
+		 <label for="product" style="color: #f54b54">Kiosco</label>
+          <input placeholder="Super Kiosco" type="text" style="width : 200px; heigth : 5px" id="product" ><br><br>
+		  
+          <label for="product" style="color: #f54b54">ID Producto</label>
+          <input type="text"  id="produ" oninput="calculateTota()" style="width : 80px; heigth : 5px" id="product" >
+		  <label for="product" style="color: #f54b54">Detalle Producto</label>
+		  <input type="text"  id="tot" oninput="calculateTota()" style="width : 200px; heigth : 5px" id="product" >
+		  
+		   
+		  
+
+          <label for="quantity" style="color: #f54b54">Cantidad</label>
+          <input type="number" style="width : 40px; heigth : 5px"  id="producto" oninput="calculateTotal()">
+		  
+		  
+		  <label for="quantity" style="color: #f54b54">Medios de Pago</label>
+		  <select name="select" style="width : 190px; heigth : 5px">
+		  <option value="value1">Seleccionar Medio de Pago</option>
+		  <option value="value1">Efectivo</option>
+  <option value="value2">Mercado Pago</option>
+  </select><br><br>
+
+          <label for="start" style="color: #f54b54">Fecha</label>
+          <input type="date" id="start" name="trip-start"
+       value="2018-07-22" min="2018-01-01" max="2018-12-31" style="padding: 10px" ><br><br>
+	   
+	   <label for="total" >Hora</label>
+          <div id="clock" style="color: black"></div><br>
+          <label for="total" style="color: #f54b54">Total</label>
+          <input type="text" id="total" style="width : 100px; heigth : 5px" readonly><br><br>
+		 
+
+         <a href="ventas2.html" class="fcc-btn">Agregar Venta</a><br><br>
+		  
+		 
+        </form>
+      </div>
+    </div>
+  </div>
+
+ 
+</body>
+</html>
+
