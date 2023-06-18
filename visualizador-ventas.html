@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sistema de Kiosco - Modulo de Ventas</title>
+  <script>
+  // Reloj
+  
+function updateClock() {
+    var currentTime = new Date();
+    var hours = currentTime.getHours();
+    var minutes = currentTime.getMinutes();
+    var seconds = currentTime.getSeconds();
+
+    // Añade un cero inicial a los minutos y segundos si son menores a 10
+    minutes = (minutes < 10 ? "0" : "") + minutes;
+    seconds = (seconds < 10 ? "0" : "") + seconds;
+
+    var timeString = hours + ":" + minutes + ":" + seconds;
+    document.getElementById("clock").innerHTML = timeString;
+}
+
+// Actualiza el reloj cada segundo
+setInterval(updateClock, 1000);
+
+</script>
+
+
+<script>
+// Rellenar total
+
+function calculateTotal() {
+    var productoInput = document.getElementById("producto");
+    var totalInput = document.getElementById("total");
+
+    var producto = productoInput.value;
+    var textoTotal = "";
+
+    if (producto) {
+        textoTotal = "300$";
+    }
+
+    totalInput.value = textoTotal;
+}
+</script>
+
+
+
+<script>
+// Rellenar total
+
+function calculateTota() {
+    var productoInput = document.getElementById("produ");
+    var totalInput = document.getElementById("tot");
+
+    var producto = productoInput.value;
+    var textoTotal = "";
+
+    if (producto) {
+        textoTotal = "Coca Cola 500 ml";
+    }
+
+    totalInput.value = textoTotal;
+}
+</script>
+
+
+
+
+
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Encabezado */
+    header {
+      background-color: #f0f0f0;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+    
+    /* Contenedor principal */
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Navegación */
+    nav {
+      background-color: black;
+      padding: 12px;
+    }
+    
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    nav ul li {
+      display: inline-block;
+     
+    }
+    
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+    }
+    
+    /* Contenido principal */
+    .content {
+      margin-top: 20px;
+    }
+    
+    /* Formulario de ventas */
+    .sales-form {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    .sales-form label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    .sales-form input[type="text"],
+    .sales-form input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+    }
+    
+    .sales-form button {
+      padding: 10px;
+      background-color:  black;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    
+    .sales-form button:hover {
+      background-color: #f54b54;
+    }
+	/* Pie de página */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+	.cerrar{
+
+padding-left: 425px;
+}
+.botonera a:hover{
+color: white;
+background: #f54b54;
+filter: alpha (opacity=80);
+}
+#clock {
+    font-size: 20px;
+	color: #f54b54;
+        }
+		#message {
+    font-size: 20px;
+	color: #f54b54;
+        }
+		
+		.fcc-btn {
+  background-color: black;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+}
+.fcc-btn:hover {
+  background-color: #f54b54;
+}
+.logo{
+
+padding-left: 12px;
+}
+
+ /* Tabla de inventario */
+    .inventory-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .inventory-table th,
+    .inventory-table td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    
+    .inventory-table th {
+      background-color: #f2f2f2;
+    }
+    
+    .inventory-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <img width="300" height="140" align="top"  src="imagen.jpg">
+  </header>
+
+  <div class="container">
+    <nav class="botonera">
+      <ul>
+        <li><a href="pantalla-secundaria.html">Inicio</a></li>
+        <li><a href="ventas.html">Ventas</a></li>
+        <li><a href="inventario.html">Inventario/Productos</a></li>
+        <li><a href="informes.html">Informes</a></li>
+		<li><a href="configuracion.html">Configuracion</a></li>
+		<li class="cerrar"><a href="Sesioncerrada.html">Cerrar sesion</a></li>
+		<li style="color: white" class="logo" class="logo"><img width="35" height="25" align="center"  src="login-usuario.png"><a href="cambiar-contrasena.html">Admin</a></li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <h2 style="color: #f54b54; text-align: center">Ventas Relizadas</h2><br>
+
+      
+	  
+	  <div class="content">
+      
+      <table class="inventory-table">
+        <thead>
+          <tr>
+		     <th>ID Producto</th>
+            <th>Detalle Producto</th>
+			<th>Cantidad</th>
+            <th>Medio de Pago</th>
+            <th>Fecha y hora</th>
+            <th>Total</th>
+		    
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="text-align: center">
+		     <td>1</td>
+            <td>Coca Cola 500ml</td>
+            <td>1</td>
+            <td>Efectivo</td>
+			<td>22/06/2023 19:30</td>
+            <td>
+              $300
+            </td>
+			
+			<tr style="text-align: center">
+		     <td>5</td>
+            <td>Galletitas Oreo</td>
+            <td>1</td>
+            <td>Meradopago</td>
+			<td>12/03/2023 18:50</td>
+            <td>
+              $200
+            </td>
+			
+			<tr style="text-align: center">
+		     <td>10</td>
+            <td>Chocolate Aguila</td>
+            <td>2</td>
+            <td>Efectivo</td>
+			<td>12/04/2023 15:30</td>
+            <td>
+              $600
+            </td>
+			
+			<tr style="text-align: center">
+		     <td>11</td>
+            <td>Caramelos Sugus</td>
+            <td>20</td>
+            <td>Efectivo</td>
+			<td>10/06/2023 14:30</td>
+            <td>
+              $350
+            </td>
+			
+			<tr style="text-align: center">
+		     <td>50</td>
+            <td>Biscochos Don Satur</td>
+            <td>2</td>
+            <td>Mercadopago</td>
+			<td>01/01/2023 20:30</td>
+            <td>
+              $500
+            </td>
+			
+			<tr style="text-align: center">
+		     <td>10</td>
+            <td>Chocolate Aguila</td>
+            <td>2</td>
+            <td>Efectivo</td>
+			<td>12/04/2023 15:30</td>
+            <td>
+              $600
+            </td>
+			
+			<tr style="text-align: center">
+		     <td>11</td>
+            <td>Caramelos Sugus</td>
+            <td>20</td>
+            <td>Efectivo</td>
+			<td>10/06/2023 14:30</td>
+            <td>
+              $350
+            </td>
+			<tr style="text-align: center">
+		     <td>11</td>
+            <td>Caramelos Sugus</td>
+            <td>20</td>
+            <td>Efectivo</td>
+			<td>10/06/2023 14:30</td>
+            <td>
+              $350
+            </td>
+			
+			<tr style="text-align: center">
+		     <td>50</td>
+            <td>Biscochos Don Satur</td>
+            <td>2</td>
+            <td>Mercadopago</td>
+			<td>01/01/2023 20:30</td>
+            <td>
+              $500
+            </td>
+			  <tr style="text-align: center">
+		     <td>1</td>
+            <td>Coca Cola 500ml</td>
+            <td>2</td>
+            <td>Efectivo</td>
+			<td>10/06/2023 19:30</td>
+            <td>
+              $600
+            </td>
+			
+			<tr style="text-align: center">
+		     <td>5</td>
+            <td>Galletitas Oreo</td>
+            <td>1</td>
+            <td>Meradopago</td>
+			<td>12/03/2023 18:50</td>
+            <td>
+              $200
+            </td>
+			
+		   	</tr>
+			<tr style="text-align: center">
+		     <td></td>
+          </tr >
+			  <tr style="text-align: center">
+		     <td><a href="ventas.html" class="fcc-btn">Volver</a></td>
+          </tr >
+		   
+    </div>
+	  </div>
+<div>
+	
+	<div>
+ 
+</body>
+</html>
+
